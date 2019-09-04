@@ -1,6 +1,7 @@
-//import ballMovementX from './ballMovementX';
-//import ballMovementY from './ballMovementY';
-import ballDirection from './ballDirection';
+import ballDirectionX from './ballDirectionX';
+import ballDirectionY from './ballDirectionY';
+import ballMovementX from './ballMovementX';
+import ballMovementY from './ballMovementY';
 import ballOriginX from './ballOriginX';
 import ballOriginXMax from './ballOriginXMax';
 import ballOriginXMin from './ballOriginXMin';
@@ -22,9 +23,10 @@ import paddleSizeX from './paddleSizeX';
 import paddleSizeY from './paddleSizeY';
 
 export default {
-	//ballMovementX,
-	//ballMovementY,
-	ballDirection,
+	ballDirectionX,
+	ballDirectionY,
+	ballMovementX,
+	ballMovementY,
 	ballOriginX,
 	ballOriginXMax,
 	ballOriginXMin,

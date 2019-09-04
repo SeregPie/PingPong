@@ -1,8 +1,6 @@
 export default function() {
 	return {
-		ballDirectionDirty: Math.random(),
-		ballMovementX: 750,
-		ballMovementY: 650,
+		ballDirection: Math.random() * Math.PI * 2,
 		ballOriginXRelative: 0,
 		ballOriginYRelative: 0,
 		paddle1OriginYRelative: 0,
