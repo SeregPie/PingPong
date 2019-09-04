@@ -8,21 +8,25 @@ export default function() {
 		if (this.ballOriginX < this.ballOriginXMin) {
 			this.ballOriginX = 2 * this.ballOriginXMin - this.ballOriginX;
 			this.ballDirectionX *= -1;
+			this.ballDirection += (1/2 - Math.random()) / 128;
 			b = false;
 		}
 		if (this.ballOriginX > this.ballOriginXMax) {
 			this.ballOriginX = 2 * this.ballOriginXMax - this.ballOriginX;
 			this.ballDirectionX *= -1;
+			this.ballDirection += (1/2 - Math.random()) / 128;
 			b = false;
 		}
 		if (this.ballOriginY < this.ballOriginYMin) {
 			this.ballOriginY = 2 * this.ballOriginYMin - this.ballOriginY;
 			this.ballDirectionY *= -1;
+			this.ballDirection += (1/2 - Math.random()) / 128;
 			b = false;
 		}
 		if (this.ballOriginY > this.ballOriginYMax) {
 			this.ballOriginY = 2 * this.ballOriginYMax - this.ballOriginY;
 			this.ballDirectionY *= -1;
+			this.ballDirection += (1/2 - Math.random()) / 128;
 			b = false;
 		}
 		if (b) {
@@ -30,9 +34,21 @@ export default function() {
 		}
 	}
 	if (this.ballMovementX < 0) {
-		this.paddle1OriginY = Math_clamp(this.ballOriginY, this.paddleOriginYMin, this.paddleOriginYMax);
+		let distanceX = this.ballOriginX - this.paddle1OriginX;
+		let distanceY = this.ballOriginY - this.paddle1OriginY;
+		this.paddle1OriginY = Math_clamp(
+			this.paddle1OriginY + distanceY / ((Math.abs(distanceX) / (Math.abs(distanceY) + 1)) + 1),
+			this.paddleOriginYMin,
+			this.paddleOriginYMax,
+		);
 	} else
 	if (this.ballMovementX > 0) {
-		this.paddle2OriginY = Math_clamp(this.ballOriginY, this.paddleOriginYMin, this.paddleOriginYMax);
+		let distanceX = this.ballOriginX - this.paddle2OriginX;
+		let distanceY = this.ballOriginY - this.paddle2OriginY;
+		this.paddle2OriginY = Math_clamp(
+			this.paddle2OriginY + distanceY / ((Math.abs(distanceX) / (Math.abs(distanceY) + 2)) + 2),
+			this.paddleOriginYMin,
+			this.paddleOriginYMax,
+		);
 	}
 }

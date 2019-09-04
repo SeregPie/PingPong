@@ -1,4 +1,4 @@
 export default {
 	type: Number,
-	default: 18,
+	default: 8,
 };
