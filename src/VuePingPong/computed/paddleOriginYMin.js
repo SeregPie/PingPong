@@ -1,3 +1,3 @@
 export default function() {
-	return this.sizeY / 2;
+	return this.paddleSizeY / 2;
 }

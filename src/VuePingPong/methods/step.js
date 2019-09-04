@@ -1,3 +1,5 @@
+import Math_clamp from '../../core/Math/clamp';
+
 export default function() {
 	this.ballOriginX += this.delta * this.ballMovementX;
 	this.ballOriginY += this.delta * this.ballMovementY;
@@ -28,9 +30,9 @@ export default function() {
 		}
 	}
 	if (this.ballMovementX < 0) {
-		this.paddle1OriginY = this.ballOriginY;
+		this.paddle1OriginY = Math_clamp(this.ballOriginY, this.paddleOriginYMin, this.paddleOriginYMax);
 	} else
 	if (this.ballMovementX > 0) {
-		this.paddle2OriginY = this.ballOriginY;
+		this.paddle2OriginY = Math_clamp(this.ballOriginY, this.paddleOriginYMin, this.paddleOriginYMax);
 	}
 }

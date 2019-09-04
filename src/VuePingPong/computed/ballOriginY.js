@@ -1,8 +1,8 @@
 export default {
 	get() {
-		return this.halfSizeY * (1 + this.ballOriginYRelative);
+		return (this.sizeY / 2) * (1 + this.ballOriginYRelative);
 	},
 	set(value) {
-		this.ballOriginYRelative = value / this.halfSizeY - 1;
+		this.ballOriginYRelative = value / (this.sizeY / 2) - 1;
 	},
 };
