@@ -1,2 +1,3 @@
-# PingPong
+# VuePingPong
+
 Automated ping-pong game.
